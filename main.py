@@ -1,3 +1,4 @@
+import pytube
 from pytube import YouTube
 from pytube import Playlist
 from pydub import AudioSegment
@@ -18,7 +19,7 @@ class Downloader:
 
     #yt.streams.filter(progressive=False,type="audio").order_by("abr").last().download()
 
-    def __init__(self, url='https://www.youtube.com/watch?v=u7AG8pLM2fc'):
+    def __init__(self, url="https://www.youtube.com/watch?v=u7AG8pLM2fc"):
         self.update_url(url)
 
     def update_url(self, url):
@@ -173,7 +174,7 @@ def timestamp_decode(split : str) -> int:
 
 def mainloop():
 
-    d = Downloader("Default")
+    d = Downloader()
     url = "Input URL: "
 
     if "list" in url or "playlist" in url:
